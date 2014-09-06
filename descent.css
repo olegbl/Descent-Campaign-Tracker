@@ -1,0 +1,247 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	border: none;
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica', 'Helvetica Neue', 'Tahoma', sans-serif;
+	text-align: center;
+	background: #000000;
+	font-size: 14px;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+}
+
+#root {
+	display: inline-block;
+	width: 600px;
+	height: 100%;
+	background: #E0E0E0;
+}
+
+.header {
+	padding: 8px;
+	color: #FFFFFF;
+	background-color: #994444;
+	font-size: 28px;
+}
+
+button.next,
+button.back,
+.sectionheader {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	margin: 1px 0;
+	font-size: 20px;
+	color: #FFFFFF;
+	border: none;
+}
+
+button.back {
+	text-align: left;
+	background: #336699;
+	cursor: pointer;
+	border-left: 12px solid #6699CC;
+}
+
+button.next {
+	text-align: right;
+	background: #339966;
+	cursor: pointer;
+	border-right: 12px solid #66CC99;
+}
+
+.sectionheader {
+	text-align: center;
+	background: #666666;
+}
+
+.loading {
+	padding: 10px;
+	font-size: 22px;
+	font-style: italic;
+}
+
+.login {
+	padding: 10px;
+}
+
+.login button {
+	font-size: 20px;
+	padding: 20px 40px;
+	cursor: pointer;
+}
+
+.newgame,
+.loadgame {
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.gamesummary {
+	box-sizing: border-box;
+	width: 100%;
+	background: #70BAC2;
+	padding: 10px;
+	margin: 1px 0;
+	border-right: 12px solid #94CBD1;
+	cursor: pointer;
+}
+
+.gamesummary .gamename {
+	font-size: 20px;
+}
+
+.gamesummary .campaign {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.overlordsummary {
+	color: #000000;
+	background: #C27070;
+	border-right: 12px solid #D19494;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.overlordsummary .title {
+	font-size: 20px;
+}
+
+.overlordsummary .experience {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.heroes {
+	background: #A57CC7;
+}
+
+.herosummary {
+	padding: 10px;
+}
+
+.herosummary .title {
+	font-size: 20px;
+}
+
+.herolist {
+	display: block;
+	text-align: left;
+}
+
+.herolist .hero {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 50%;
+	background: #CCCCCC;
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #A57CC7;
+}
+
+.herolist .hero.berserker,
+.herolist .hero.knight {
+	background: #D19494;
+}
+
+.herolist .hero .name {
+	font-size: 20px;
+}
+
+.herolist .hero .class {
+	font-size: 16px;
+}
+
+.herolist .hero .experience {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.herolist .newhero {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	background: #70C299;
+}
+
+.herolist .newhero + .next {
+	margin-top: 0;
+}
+
+.herodetails {
+
+}
+
+.herodetails .name {
+	font-size: 20px;
+}
+
+.herodetails .class {
+	font-size: 16px;
+}
+
+.herodetails .experience {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.herodetails .info {
+	padding: 10px;
+}
+
+.herodetails .skills .skill,
+.herodetails .items .item {
+	font-size: 18px;
+	padding: 10px;
+	position: relative;
+}
+
+.herodetails .skills .skill + .skill {
+	border-top: 1px solid #999999;
+}
+
+.herodetails .items .item + .item {
+	border-top: 1px solid #999999;
+}
+
+.herodetails .skills button.delete,
+.herodetails .items button.delete {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #C27070;
+	border: none;
+	border-right: 12px solid #D19494;
+	padding: 0 16px;
+	margin: 0;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.additem input,
+.addskill input {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 4px 8px;
+	margin: 0;
+	font-size: 20px;
+	background: #FFFFFF;
+	border: none;
+	text-align: center;
+}
+
+.additem .items .item,
+.addskill .skills .skill {
+	text-align: center;
+}
