@@ -1,247 +1,392 @@
+/*
+
+colors:
+
+  red:    #FF8487
+  green:  #ACF56B
+  blue:   #8CCFFF
+  gold:   #FFDC6F
+
+  back:   #9D0B19
+  next:   #47900A
+
+  gold:   #F1AC3C
+  exp:    #55B0C1
+
+  ol:     #9665A7
+  heroes: #C272A6
+
+*/
+
 html, body {
-	width: 100%;
-	height: 100%;
-	border: none;
-	margin: 0;
-	padding: 0;
-	font-family: 'Helvetica', 'Helvetica Neue', 'Tahoma', sans-serif;
-	text-align: center;
-	background: #000000;
-	font-size: 14px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', 'Helvetica Neue', 'Tahoma', sans-serif;
+  text-align: center;
+  background: #000000;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5 {
-	margin: 0;
+  margin: 0;
 }
 
 #root {
-	display: inline-block;
-	width: 600px;
-	height: 100%;
-	background: #E0E0E0;
+  display: inline-block;
+  width: 600px;
+  height: 100%;
+  background: #E0E0E0;
 }
 
 .header {
-	padding: 8px;
-	color: #FFFFFF;
-	background-color: #994444;
-	font-size: 28px;
+  padding: 8px;
+  font-size: 28px;
 }
 
 button.next,
 button.back,
 .sectionheader {
-	box-sizing: border-box;
-	display: block;
-	width: 100%;
-	padding: 8px 12px;
-	margin: 1px 0;
-	font-size: 20px;
-	color: #FFFFFF;
-	border: none;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin: 1px 0;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: none;
 }
 
 button.back {
-	text-align: left;
-	background: #336699;
-	cursor: pointer;
-	border-left: 12px solid #6699CC;
+  text-align: left;
+  background: #9D0B19;
+  cursor: pointer;
+  border-left: 12px solid rgba(255, 255, 255, 0.25);
 }
 
 button.next {
-	text-align: right;
-	background: #339966;
-	cursor: pointer;
-	border-right: 12px solid #66CC99;
+  text-align: right;
+  background: #47900A;
+  cursor: pointer;
+  border-right: 12px solid rgba(255, 255, 255, 0.25);
 }
 
 .sectionheader {
-	text-align: center;
-	background: #666666;
+  text-align: center;
+  background: #666666;
 }
 
 .loading {
-	padding: 10px;
-	font-size: 22px;
-	font-style: italic;
+  padding: 10px;
+  font-size: 22px;
+  font-style: italic;
 }
 
 .login {
-	padding: 10px;
+  padding: 10px;
 }
 
 .login button {
-	font-size: 20px;
-	padding: 20px 40px;
-	cursor: pointer;
+  font-size: 20px;
+  padding: 20px 40px;
+  cursor: pointer;
 }
 
 .newgame,
 .loadgame {
-	box-sizing: border-box;
-	padding: 10px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .gamesummary {
-	box-sizing: border-box;
-	width: 100%;
-	background: #70BAC2;
-	padding: 10px;
-	margin: 1px 0;
-	border-right: 12px solid #94CBD1;
-	cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  color: #000000;
+  background: #7A6FAE;
+  padding: 10px;
+  margin: 1px 0;
+  border-right: 12px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
 }
 
 .gamesummary .gamename {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 .gamesummary .campaign {
-	font-size: 16px;
-	font-style: italic;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.gamedetails .info {
+  padding: 10px;
+}
+
+.gamedetails .info .name {
+  font-size: 20px;
+}
+
+.gamedetails .info .campaign {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.gamedetails .scenarios {
+  padding: 10px;
+}
+
+.gamedetails .scenarios .scenario {
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.gamedetails .notes textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
 }
 
 .overlordsummary {
-	color: #000000;
-	background: #C27070;
-	border-right: 12px solid #D19494;
-	font-size: 14px;
-	cursor: pointer;
+  color: #000000;
+  background: #9665A7;
+  border-right: 12px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .overlordsummary .title {
-	font-size: 20px;
+  font-size: 20px;
+}
+
+.overlordsummary .wins {
+  font-size: 16px;
 }
 
 .overlordsummary .experience {
-	font-size: 16px;
-	font-style: italic;
+  font-size: 16px;
 }
 
-.heroes {
-	background: #A57CC7;
+.overlorddetails .experience {
+  font-size: 16px;
+  font-style: italic;
 }
 
-.herosummary {
-	padding: 10px;
+.overlorddetails .info {
+  padding: 10px;
 }
 
-.herosummary .title {
-	font-size: 20px;
+.overlorddetails .skills .skill,
+.overlorddetails .items .item {
+  font-size: 18px;
+  padding: 10px;
+  position: relative;
 }
 
-.herolist {
-	display: block;
-	text-align: left;
+.overlorddetails .skills .skill + .skill {
+  border-top: 1px solid #999999;
 }
 
-.herolist .hero {
-	box-sizing: border-box;
-	display: inline-block;
-	width: 50%;
-	background: #CCCCCC;
-	padding: 10px;
-	text-align: center;
-	cursor: pointer;
-	border: 1px solid #A57CC7;
+.overlorddetails .items .item + .item {
+  border-top: 1px solid #999999;
 }
 
-.herolist .hero.berserker,
-.herolist .hero.knight {
-	background: #D19494;
+.overlorddetails .skills button.delete,
+.overlorddetails .items button.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: #FFFFFF;
+  background: #9D0B19;
+  border: none;
+  border-right: 12px solid rgba(255, 255, 255, 0.25);
+  padding: 0 16px;
+  margin: 0;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.herolist .hero .name {
-	font-size: 20px;
+.heroes .summary {
+  padding: 10px;
+  color: #000000;
+  background: #C272A6;
 }
 
-.herolist .hero .class {
-	font-size: 16px;
+.heroes .summary .title {
+  font-size: 20px;
 }
 
-.herolist .hero .experience {
-	font-size: 16px;
-	font-style: italic;
+.heroes .summary .wins {
+  font-size: 16px;
 }
 
-.herolist .newhero {
-	box-sizing: border-box;
-	display: block;
-	width: 100%;
-	padding: 10px;
-	text-align: center;
-	background: #70C299;
+.heroes .summary .experience {
+  position: relative;
+  font-size: 16px;
 }
 
-.herolist .newhero + .next {
-	margin-top: 0;
+.heroes .summary .gold {
+  position: relative;
+  font-size: 16px;
 }
 
-.herodetails {
+.heroes .actions {
+  white-space: nowrap;
+}
 
+.heroes .actions button {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 25%;
+  height: 50px;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.heroes button.gold {
+  background: #F1AC3C;
+}
+
+.heroes button.experience {
+  background: #55B0C1;
+}
+
+.heroes .list {
+  display: block;
+  text-align: left;
+}
+
+.heroes .list .hero {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+  background: #CCCCCC;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.heroes .list .hero.warrior {
+  background: #FF8487;
+}
+
+.heroes .list .hero.mage {
+  background: #FFDC6F;
+}
+
+.heroes .list .hero.healer {
+  background: #8CCFFF;
+}
+
+.heroes .list .hero.scout {
+  background: #ACF56B;
+}
+
+.heroes .list .hero .name {
+  font-size: 20px;
+}
+
+.heroes .list .hero .class {
+  font-size: 16px;
+}
+
+.heroes .list .hero .player {
+  font-size: 16px;
+}
+
+.heroes .list .hero .experience {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.heroes .list .newhero {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: #70C299;
+}
+
+.heroes .list .newhero + .next {
+  margin-top: 0;
 }
 
 .herodetails .name {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 .herodetails .class {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .herodetails .experience {
-	font-size: 16px;
-	font-style: italic;
+  font-size: 16px;
+  font-style: italic;
 }
 
 .herodetails .info {
-	padding: 10px;
+  padding: 10px;
 }
 
 .herodetails .skills .skill,
 .herodetails .items .item {
-	font-size: 18px;
-	padding: 10px;
-	position: relative;
+  font-size: 18px;
+  padding: 10px;
+  position: relative;
 }
 
 .herodetails .skills .skill + .skill {
-	border-top: 1px solid #999999;
+  border-top: 1px solid #999999;
 }
 
 .herodetails .items .item + .item {
-	border-top: 1px solid #999999;
+  border-top: 1px solid #999999;
 }
 
 .herodetails .skills button.delete,
 .herodetails .items button.delete {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background: #C27070;
-	border: none;
-	border-right: 12px solid #D19494;
-	padding: 0 16px;
-	margin: 0;
-	font-size: 18px;
-	cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #C27070;
+  border: none;
+  border-right: 12px solid rgba(255, 255, 255, 0.25);
+  padding: 0 16px;
+  margin: 0;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .additem input,
 .addskill input {
-	box-sizing: border-box;
-	display: block;
-	width: 100%;
-	padding: 4px 8px;
-	margin: 0;
-	font-size: 20px;
-	background: #FFFFFF;
-	border: none;
-	text-align: center;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 4px 8px;
+  margin: 0;
+  font-size: 20px;
+  background: #FFFFFF;
+  border: none;
+  text-align: center;
 }
 
 .additem .items .item,
 .addskill .skills .skill {
-	text-align: center;
+  text-align: center;
+}
+
+.addskill.overlord .skills .skill {
+  text-align: left;
 }
