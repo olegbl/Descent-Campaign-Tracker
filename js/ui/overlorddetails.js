@@ -1,50 +1,45 @@
 /** @jsx React.DOM */
 
-var UIHeroDetails = React.createClass({
+var UIOverlordDetails = React.createClass({
   getInitialState: function() {
     return {
-      game: null,
-      hero: null
+      game: null
     };
   },
 
   render: function() {
-    if (!this.state.hero) return null;
+    if (!this.state.game) return null;
     var that = this;
 
-    var name = this.state.hero.get("name");
-    var className = this.state.hero.get("class");
-    var experience = that.state.game.get("heroExperience");
-    var spentExperience = this.state.hero.get("skills").toArray()
+    var experience = this.state.game.get("overlordExperience");
+    var spentExperience = this.state.game.get("overlordSkills").toArray()
       .map(function(skill) {
-        return data.classes[className].skills[skill] || data.skills && data.skills[skill] || 0;
+        return data.overlord.skills[skill] || data.skills && data.skills[skill] || 0;
       })
       .reduce(function(exp1, exp2) {
         return exp1 + exp2;
       }, 0);
     var unspentExperience = experience - spentExperience;
 
-    var skills = this.state.hero.get("skills").toArray().map(function(skill) {
+    var skills = this.state.game.get("overlordSkills").toArray().map(function(skill) {
       return <div className="skill">
         {skill}
         <button className="delete" onClick={that._deleteSkill.bind(that, skill)}>Remove</button>
       </div>;
     });
 
-    var items = this.state.hero.get("items").toArray().map(function(item) {
+    var items = this.state.game.get("overlordItems").toArray().map(function(item) {
       return <div className="item">
         {item}
         <button className="delete" onClick={that._deleteItem.bind(that, item)}>Remove</button>
       </div>;
     });
 
-    return <div className={"herodetails " + className.toLowerCase()}>
+
+    return <div className="overlorddetails">
       <button className="back" onClick={this._back}>Back</button>
-      <div className="info">
-        <div className="name">{name}</div>
-        <div className="class">{className}</div>
-        <div className="experience">{unspentExperience} Experience</div>
-      </div>
+      <UIExperienceMeter label="Total Experience" value={experience} onAdd={this._addExp} onSubtract={this._subtractExp} />
+      <UIExperienceMeter label="Unspent Experience" value={unspentExperience} />
       <div className="sectionheader">Skills</div>
       <button className="next" onClick={this._addSkill}>Add</button>
       <div className="skills">
@@ -69,34 +64,41 @@ var UIHeroDetails = React.createClass({
 
   _updateData: function() {
     this.setState({
-      game: dropbox.games.get(this.props.gameid),
-      hero: dropbox.heroes.get(this.props.heroid)
+      game: dropbox.games.get(this.props.gameid)
     });
   },
 
+  _addExp: function() {
+    this.state.game.set("overlordExperience", this.state.game.get("overlordExperience") + 1);
+  },
+
+  _subtractExp: function() {
+    this.state.game.set("overlordExperience", Math.max(0, this.state.game.get("overlordExperience") - 1));
+  },
+
   _addSkill: function() {
-    Events.publish("section", "addskill");
+    Events.publish("section", "addskilloverlord");
   },
 
   _deleteSkill: function(skill) {
-    var skills = this.state.hero.get("skills").toArray();
+    var skills = this.state.game.get("overlordSkills").toArray();
     var index = skills.indexOf(skill);
     if (index != -1) {
       skills.splice(index, 1);
-      this.state.hero.set("skills", skills);
+      this.state.game.set("overlordSkills", skills);
     }
   },
 
   _addItem: function() {
-    Events.publish("section", "additem");
+    Events.publish("section", "additemoverlord");
   },
 
   _deleteItem: function(item) {
-    var items = this.state.hero.get("items").toArray();
+    var items = this.state.game.get("overlordItems").toArray();
     var index = items.indexOf(item);
     if (index != -1) {
       items.splice(index, 1);
-      this.state.hero.set("items", items);
+      this.state.game.set("overlordItems", items);
     }
   },
 

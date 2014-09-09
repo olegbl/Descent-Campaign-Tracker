@@ -51,17 +51,19 @@ var UINewScenario = React.createClass({
 
 			scenarioList.push(
 				<div key={scenarioName}>
-					<h3>{scenario.act}: {scenarioName}</h3>
-					<button onClick={this._newScenario.bind(this, scenarioName, scenario.act, "Heroes")}>Heroes Won</button>
-					<button onClick={this._newScenario.bind(this, scenarioName, scenario.act, "Overlord")}>Overlord Won</button>
+					<div className="scenario">{scenario.act}: {scenarioName}</div>
+					<button className="overlord" onClick={this._newScenario.bind(this, scenarioName, scenario.act, "Overlord")}>Overlord Won</button>
+					<button className="heroes" onClick={this._newScenario.bind(this, scenarioName, scenario.act, "Heroes")}>Heroes Won</button>
 				</div>
 			);
 		}
 
-		return <div>
-		<button className="back" onClick={this._back}>Back</button>
-			<h2>Choose a Scenario</h2>
-			{scenarioList}
+		return <div className="newscenario">
+			<button className="back" onClick={this._back}>Back</button>
+			<div className="sectionheader">Choose a Scenario</div>
+			<div className="list">
+				{scenarioList}
+			</div>
 		</div>;
 	},
 

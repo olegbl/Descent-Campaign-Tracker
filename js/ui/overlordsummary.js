@@ -11,23 +11,9 @@ var UIOverlordSummary = React.createClass({
   render: function() {
     if (!this.state.game) return null;
 
-    var skills = this.state.game.get("overlordSkills");
-    var items = this.state.game.get("overlordItems");
-    var winCount = this.state.won.length;
-    var experience = this.state.game.get("overlordExperience");
-    var spentExperience = this.state.game.get("overlordSkills").toArray()
-      .map(function(skill) {
-        return data.overlord.skills[skill] || data.skills && data.skills[skill] || 0;
-      })
-      .reduce(function(exp1, exp2) {
-        return exp1 + exp2;
-      }, 0);
-    var unspentExperience = experience - spentExperience;
-
     return <div className="overlordsummary sectionheader" onClick={this._onEdit}>
       <div className="title">Overlord</div>
-      <div className="wins">{winCount} Wins</div>
-      <div className="experience">{unspentExperience} Experience</div>
+      <div className="wins">{this.state.won.length} Wins</div>
     </div>;
   },
 

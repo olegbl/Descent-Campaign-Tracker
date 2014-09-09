@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Descent Campaign Tracker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="http://fb.me/react-0.11.1.js" type="text/javascript"></script>
-  <script src="http://fb.me/JSXTransformer-0.11.1.js" type="text/javascript"></script>
-  <script src="https://www.dropbox.com/static/api/dropbox-datastores-1.1-latest.js" type="text/javascript"></script>
+    <title>Descent Campaign Tracker</title>
 
-  <script src="utilities.js" type="text/jsx"></script>
-  <script src="dropbox.js" type="text/jsx"></script>
+    <!-- metatags -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
 
-  <script src="ui/root.js" type="text/jsx"></script>
-  <script src="ui/loading.js" type="text/jsx"></script>
-  <script src="ui/login.js" type="text/jsx"></script>
-  <script src="ui/gamelist.js" type="text/jsx"></script>
-  <script src="ui/summary.js" type="text/jsx"></script>
+    <!-- dropbox -->
+    <script src="https://www.dropbox.com/static/api/dropbox-datastores-1.1-latest.js" type="text/javascript"></script>
 
-  <script src="ui/gamesummary.js" type="text/jsx"></script>
-  <script src="ui/gamedetails.js" type="text/jsx"></script>
-  <script src="ui/newscenario.js" type="text/jsx"></script>
+    <!-- reactjs -->
+    <script src="js/res/react-0.11.1.js" type="text/javascript"></script>
+    <script src="js/res/JSXTransformer-0.11.1.js" type="text/javascript"></script>
 
-  <script src="ui/herosummary.js" type="text/jsx"></script>
-  <script src="ui/herodetails.js" type="text/jsx"></script>
-  <script src="ui/additem.js" type="text/jsx"></script>
-  <script src="ui/addskill.js" type="text/jsx"></script>
+    <!-- utility-esque -->
+    <script src="js/utilities.js" type="text/jsx"></script>
+    <script src="js/dropbox.js" type="text/jsx"></script>
 
-  <script src="ui/overlordsummary.js" type="text/jsx"></script>
-  <script src="ui/overlorddetails.js" type="text/jsx"></script>
-  <script src="ui/additemoverlord.js" type="text/jsx"></script>
-  <script src="ui/addskilloverlord.js" type="text/jsx"></script>
+    <!-- component -->
+    <script src="js/ui/components/meter.js" type="text/jsx"></script>
+    <script src="js/ui/components/meter.gold.js" type="text/jsx"></script>
+    <script src="js/ui/components/meter.experience.js" type="text/jsx"></script>
 
-  <script src="data.js" type="text/javascript"></script>
-  <script src="descent.js" type="text/jsx"></script>
+    <!-- base app -->
+    <script src="js/ui/root.js" type="text/jsx"></script>
+    <script src="js/ui/loading.js" type="text/jsx"></script>
+    <script src="js/ui/login.js" type="text/jsx"></script>
+    <script src="js/ui/gamelist.js" type="text/jsx"></script>
+    <script src="js/ui/summary.js" type="text/jsx"></script>
 
-  <link href="descent.css" type="text/css" rel="stylesheet" media="screen" />
+    <!-- game -->
+    <script src="js/ui/gamesummary.js" type="text/jsx"></script>
+    <script src="js/ui/gamedetails.js" type="text/jsx"></script>
+    <script src="js/ui/newscenario.js" type="text/jsx"></script>
+
+    <!-- heroes -->
+    <script src="js/ui/herosummary.js" type="text/jsx"></script>
+    <script src="js/ui/herodetails.js" type="text/jsx"></script>
+    <script src="js/ui/additem.js" type="text/jsx"></script>
+    <script src="js/ui/addskill.js" type="text/jsx"></script>
+
+    <!-- overlord -->
+    <script src="js/ui/overlordsummary.js" type="text/jsx"></script>
+    <script src="js/ui/overlorddetails.js" type="text/jsx"></script>
+    <script src="js/ui/additemoverlord.js" type="text/jsx"></script>
+    <script src="js/ui/addskilloverlord.js" type="text/jsx"></script>
+
+    <!-- data and init -->
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/descent.js" type="text/jsx"></script>
+
+    <!-- css -->
+    <link href="css/descent.css" type="text/css" rel="stylesheet" media="screen" />
   </head>
   <body>
     <div id="root"></div>

@@ -14,7 +14,11 @@ var UIGameDetails = React.createClass({
     var campaign = this.state.game.get("campaign");
     var scenarios = this.state.scenarios.map(function(scenario) {
       return <div className="scenario">
-        <b>{scenario.get("winner")}</b> won <b>{scenario.get("name")}</b> (<i>{scenario.get("act")}</i>)
+        <span className="act">{scenario.get("act")}</span>
+        {': '}
+        <span className="name">{scenario.get("name")}</span>
+        {' - '}
+        <span className="winner">{scenario.get("winner")}</span>
       </div>;
     });
 

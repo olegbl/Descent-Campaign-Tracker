@@ -745,6 +745,142 @@ var data = {
       // intro
       "Ruinous Whispers": {
         act: "Intro"
+      },
+      // act 1
+      "Gathering Foretold": {
+        act: "Act 1",
+        valid: [
+          { scenario: "Ruinous Whispers", winner: "any", count: [1, 1] },
+          { act: "Act 1", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Honor Among Thieves": {
+        act: "Act 1",
+        valid: [
+          { scenario: "Ruinous Whispers", winner: "any", count: [1, 1] },
+          { act: "Act 1", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Reclamation": {
+        act: "Act 1",
+        valid: [
+          { scenario: "Gathering Foretold", winner: "any", count: [1, 1] },
+          { scenario: "Fury of the Tempest", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Barrow of Barris": {
+        act: "Act 1",
+        valid: [
+          { scenario: "Honor Among Thieves", winner: "any", count: [1, 1] },
+          { scenario: "Fury of the Tempest", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Fury of the Tempest": {
+        act: "Act 1",
+        valid: [
+          { act: "Act 1", winner: "any", count: [1, 1] },
+          { scenario: "Gathering Foretold", winner: "any", count: [1, 1] },
+          { scenario: "Reclamation", winner: "any", count: [0, 0] },
+          { scenario: "Barrow of Barris", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Through the Mist": {
+        act: "Act 1",
+        valid: [
+          { act: "Act 1", winner: "any", count: [2, 2] },
+          { scenario: "Gathering Foretold", winner: "any", count: [1, 1] },
+          { scenario: "Back from the Dead", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Secrets in Stone": {
+        act: "Act 1",
+        valid: [
+          { act: "Act 1", winner: "any", count: [2, 2] },
+          { scenario: "Honor Among Thieves", winner: "any", count: [1, 1] },
+          { scenario: "Back from the Dead", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Back from the Dead": {
+        act: "Act 1",
+        valid: [
+          { act: "Act 1", winner: "any", count: [2, 2] },
+          { scenario: "Gathering Foretold", winner: "any", count: [1, 1] },
+          { scenario: "Through the Mist", winner: "any", count: [0, 0] },
+          { scenario: "Secrets in Stone", winner: "any", count: [0, 0] }
+        ]
+      },
+      // interlude
+      "Pilgrimage": {
+        act: "Interlude",
+        valid: [
+          { act: "Act 1", winner: "any", count: [3, 3] },
+          { act: "Interlude", winner: "any", count: [0, 0] }
+        ]
+      },
+      "Fortune and Glory": {
+        act: "Interlude",
+        valid: [
+          { act: "Act 1", winner: "any", count: [3, 3] },
+          { act: "Interlude", winner: "any", count: [0, 0] }
+        ]
+      },
+      // act 2
+      "Heart of the Wilds": {
+        act: "Act 2",
+        valid: [
+          { act: "Interlude", winner: "any", count: [1, 1] },
+          { act: "Act 2", winner: "any", count: [0, 2] }
+        ]
+      },
+      "Fountain of Insight": {
+        act: "Act 2",
+        valid: [
+          { act: "Interlude", winner: "any", count: [1, 1] },
+          { act: "Act 2", winner: "any", count: [0, 2] }
+        ]
+      },
+      "Web of Power": {
+        act: "Act 2",
+        valid: [
+          { act: "Interlude", winner: "any", count: [1, 1] },
+          { act: "Act 2", winner: "any", count: [0, 2] }
+        ]
+      },
+      "Let the Truth be Buried": {
+        act: "Act 2",
+        valid: [
+          { act: "Interlude", winner: "any", count: [1, 1] },
+          { act: "Act 2", winner: "any", count: [0, 2] }
+        ]
+      },
+      "Fire and Brimstone": {
+        act: "Act 2",
+        valid: [
+          { act: "Interlude", winner: "any", count: [1, 1] },
+          { act: "Act 2", winner: "any", count: [0, 2] }
+        ]
+      },
+      "Tipping the Scales": {
+        act: "Act 2",
+        valid: [
+          { act: "Interlude", winner: "any", count: [1, 1] },
+          { act: "Act 2", winner: "any", count: [0, 2] }
+        ]
+      },
+      // finale
+      "Endless Night": {
+        act: "Finale",
+        valid: [
+          { act: "Act 2", winner: "any", count: [3, 3] },
+          { act: "Finale", winner: "any", count: [0, 0] }
+        ]
+      },
+      "A Glimmer of Hope": {
+        act: "Finale",
+        valid: [
+          { act: "Act 2", winner: "any", count: [3, 3] },
+          { act: "Finale", winner: "any", count: [0, 0] }
+        ]
       }
     }
   }

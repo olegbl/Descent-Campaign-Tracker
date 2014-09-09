@@ -1,6 +1,8 @@
 /** @jsx React.DOM */
 
 var UIGameList = React.createClass({
+  nullCampaign: "Select a campaign...",
+
   getInitialState: function() {
     return {
       games: null,
@@ -15,11 +17,12 @@ var UIGameList = React.createClass({
 
     var gameList = this.state.games.map(function(record) {
       var gameid = record.getId();
-      return <div key={gameid}>
-        <button onClick={that._loadGame.bind(that, gameid)}>
-          {record.get("name")} ({record.get("campaign")})
+      return <div className="game" key={gameid}>
+        <button className="load" onClick={that._loadGame.bind(that, gameid)}>
+          <div className="name">{record.get("name")}</div>
+          <div className="campaign">{record.get("campaign")}</div>
         </button>
-        <button onClick={that._deleteGame.bind(that, gameid)}>
+        <button className="delete" onClick={that._deleteGame.bind(that, gameid)}>
           Delete
         </button>
       </div>;
@@ -28,7 +31,7 @@ var UIGameList = React.createClass({
     var campaignList = Object.getOwnPropertyNames(data.campaigns).map(function(campaign) {
       return <option key={campaign} value={campaign}>{campaign}</option>;
     });
-    campaignList.unshift(<option key={null} value={null}>Not Selected</option>);
+    campaignList.unshift(<option key={null} value={null}>{this.nullCampaign}</option>);
 
     var ready = !!this.state.campaign && !!this.state.name;
 
@@ -44,15 +47,12 @@ var UIGameList = React.createClass({
     return (
       <div>
         {loadGame}
-        <div>
-          <button className="next" onClick={this._newGame} disabled={!ready}>New Game</button>
-          <div className="newgame">
-            <h3>Label</h3>
-            <input placeholder="Label for the game..." value={this.state.name} onChange={this._onChangeName} />
-            <h3>Campaign</h3>
-            <select onChange={this._onChangeCampaign} value={this.state.campaign}>{campaignList}</select>
-          </div>
+        <div className="sectionheader">New Game</div>
+        <div className="newgame">
+          <input placeholder="Label for the game..." value={this.state.name} onChange={this._onChangeName} />
+          <select onChange={this._onChangeCampaign} value={this.state.campaign}>{campaignList}</select>
         </div>
+        <button className="next" onClick={this._newGame} disabled={!ready}>Start</button>
       </div>
     );
   },
@@ -77,7 +77,7 @@ var UIGameList = React.createClass({
   },
 
   _onChangeCampaign: function(event) {
-    if (event.target.value === "Not Selected") {
+    if (event.target.value === this.nullCampaign) {
       this.setState({ campaign: null });
     } else {
       this.setState({ campaign: event.target.value });

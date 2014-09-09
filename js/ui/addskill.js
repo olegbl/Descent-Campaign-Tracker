@@ -1,20 +1,21 @@
 /** @jsx React.DOM */
 
-var UIAddSkillOverlord = React.createClass({
+var UIAddSkill = React.createClass({
   getInitialState: function() {
     return {
-      game: null,
+      hero: null,
       filter: "",
       customSkill: "",
-      customSkillCost: 0
+      customSkillCost: null
     };
   },
 
   render: function() {
-    if (!this.state.game) return null;
+    if (!this.state.hero) return null;
     var that = this;
 
-    var skills = data.overlord.skills;
+    var className = this.state.hero.get("class");
+    var skills = data.classes[className].skills;
     var skillList = [];
     for (var skill in skills) {
       if (skill.toLowerCase().indexOf(this.state.filter.toLowerCase()) == -1) continue;
@@ -29,15 +30,15 @@ var UIAddSkillOverlord = React.createClass({
       );
     }
 
-    return <div className="addskill overlord">
+    return <div className="addskill heroes">
       <button className="back" onClick={this._back}>Back</button>
       <input type="text" placeholder="Search..." value={this.state.filter} onChange={this._onChange}></input>
       <div className="skills">
         {skillList}
       </div>
       <div className="sectionheader">Custom Skills</div>
-      <input type="text" placeholder="Custom Skill Name" value={this.state.customSkill} onChange={this._onChangeCustomSkill}></input>
-      <input type="text" placeholder="Custom Skill Experience Cost" value={this.state.customSkillCost} onChange={this._onChangeCustomSkillCost}></input>
+      <input type="text" placeholder="Skill name..." value={this.state.customSkill} onChange={this._onChangeCustomSkill}></input>
+      <input type="text" placeholder="Skill experience cost..." value={this.state.customSkillCost} onChange={this._onChangeCustomSkillCost}></input>
       <button className="next" onClick={this._addCustomSkill} disabled={!this.state.customSkill}>Add Custom Skill</button>
     </div>;
   },
@@ -53,7 +54,7 @@ var UIAddSkillOverlord = React.createClass({
 
   _updateData: function() {
     this.setState({
-      game: dropbox.games.get(this.props.gameid)
+      hero: dropbox.heroes.get(this.props.heroid)
     });
   },
 
@@ -71,14 +72,14 @@ var UIAddSkillOverlord = React.createClass({
   },
 
   _back: function() {
-    Events.publish("section", "overlorddetails");
+    Events.publish("section", "herodetails");
   },
 
   _add: function(skill) {
-    var skills = this.state.game.get("overlordSkills").toArray();
+    var skills = this.state.hero.get("skills").toArray();
     skills.push(skill);
-    this.state.game.set("overlordSkills", skills);
-    Events.publish("section", "overlorddetails");
+    this.state.hero.set("skills", skills);
+    Events.publish("section", "herodetails");
   },
 
   _addCustomSkill: function() {

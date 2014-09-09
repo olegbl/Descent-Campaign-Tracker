@@ -1,41 +1,41 @@
 /** @jsx React.DOM */
 
-var UIAddItemOverlord = React.createClass({
+var UIAddItem = React.createClass({
   getInitialState: function() {
     return {
-      game: null,
+      hero: null,
       filter: "",
       customItem: ""
     };
   },
 
   render: function() {
-    if (!this.state.game) return null;
+    if (!this.state.hero) return null;
     var that = this;
 
     var acts = Object.getOwnPropertyNames(data.items)
       .map(function(act) {
-        if (act !== "Overlord Relics") return null;
+        if (act === "Overlord Relics") return null;
         var items = data.items[act].filter(function(item) {
           return item.toLowerCase().indexOf(that.state.filter.toLowerCase()) !== -1;
         }).map(function(item) {
           return <button className="next item" key={item} onClick={that._add.bind(that, item)}>{item}</button>;
         });
 
-        return <div className="act">
+        return <div className="act" key={act}>
           <div className="sectionheader">{act}</div>
           {items}
         </div>;
       });
 
-    return <div className="additem overlord">
+    return <div className="additem heroes">
       <button className="back" onClick={this._back}>Back</button>
       <input type="text" placeholder="Search..." value={this.state.filter} onChange={this._onChange}></input>
       <div className="items">
         {acts}
       </div>
       <div className="sectionheader">Custom Items</div>
-      <input type="text" placeholder="Custom Item Name" value={this.state.customItem} onChange={this._onChangeCustomItem}></input>
+      <input type="text" placeholder="Item name..." value={this.state.customItem} onChange={this._onChangeCustomItem}></input>
       <button className="next" onClick={this._addCustomItem} disabled={!this.state.customItem}>Add Custom Item</button>
     </div>;
   },
@@ -51,7 +51,7 @@ var UIAddItemOverlord = React.createClass({
 
   _updateData: function() {
     this.setState({
-      game: dropbox.games.get(this.props.gameid)
+      hero: dropbox.heroes.get(this.props.heroid)
     });
   },
 
@@ -64,14 +64,14 @@ var UIAddItemOverlord = React.createClass({
   },
 
   _back: function() {
-    Events.publish("section", "overlorddetails");
+    Events.publish("section", "herodetails");
   },
 
   _add: function(item) {
-    var items = this.state.game.get("overlordItems").toArray();
+    var items = this.state.hero.get("items").toArray();
     items.push(item);
-    this.state.game.set("overlordItems", items);
-    Events.publish("section", "overlorddetails");
+    this.state.hero.set("items", items);
+    Events.publish("section", "herodetails");
   },
 
   _addCustomItem: function() {
