@@ -172,6 +172,8 @@ button:disabled {
   font-size: 20px;
   padding: 20px 40px;
   cursor: pointer;
+  color: #FFFFFF;
+  background: #336699;
 }
 
 .loadgame .game {
