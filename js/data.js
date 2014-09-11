@@ -506,7 +506,7 @@ var data = {
     "Spiritspeaker": {
       "archetype": "Healer",
       "items": [
-        "Oask Staff"
+        "Oak Staff"
       ],
       "skills": {
         "Stoneskin": 0,
@@ -584,7 +584,86 @@ var data = {
       "Basic II: Overwhelm": 0,
       "Basic II: Reflective Ward": 0,
       "Basic II: Sign of Weakness": 0,
-      "Basic II: Uncontrolled Power": 0
+      "Basic II: Uncontrolled Power": 0,
+      // universal
+      "Universal: Plan Ahead": 0,
+      "Universal: Schemes": 0,
+      "Universal: Dark Remedy": 0,
+      "Universal: Placebo": 0,
+      "Universal: Upgrade": 0,
+      "Universal: Diverse Means": 0,
+      "Universal: Solidarity": 0,
+      "Universal: Refresh": 0,
+      "Universal: Dark Resilience": 0,
+      // rumor rewards
+      "Rumor Reward: The Wyrm Queen's Favor": 0,
+      // quest rewards
+      "Quest Reward: Twin Souls": 0,
+      "Quest Reward: Splig's Revenge": 0,
+      // overlord rewards
+      "Overlord Reward: Secrets of Flesh": 0,
+      "Overlord Reward: Offertory Afflication": 0,
+      "Overlord Reward: Toxic Reprisal": 0,
+      "Overlord Reward: Endless Supply": 0,
+      "Overlord Reward: Down and Out": 0,
+      "Overlord Reward: Unbroken": 0,
+      // saboteur
+      "Saboteur: Explosive Runes": 1,
+      "Saboteur: Web Trap": 1,
+      "Saboteur: Curse of the Monkey God": 2,
+      "Saboteur: Wicked Laughter": 2,
+      "Saboteur: Uthuk Demon Trap": 3,
+      // infector
+      "Infector: Contaminated": 1,
+      "Infector: Adaptive Contagion": 1,
+      "Infector: Virulent Infection": 1,
+      "Infector: Airborne": 1,
+      "Infector: Tainted Blow": 2,
+      "Infector: Outbreak": 2,
+      "Infector: Dark Host": 3,
+      // punisher
+      "Punisher: No Rest for the Wicked": 1,
+      "Punisher: Trading Pains": 1,
+      "Punisher: Price of Prevention": 2,
+      "Punisher: Exploit Weakness": 2,
+      "Punisher: Blood Bargaining": 3,
+      // unkindness
+      "Unkindness: Call of the Ravens": 1,
+      "Unkindness: Feast": 1,
+      "Unkindness: Ill Omen": 1,
+      "Unkindness: Beneath the Shadow": 1,
+      "Unkindness: Beware": 1,
+      "Unkindness: Sudden Flurry": 2,
+      "Unkindness: Imitation": 2,
+      "Unkindness: Envelop": 3,
+      // warlord
+      "Warlord: Dark Fortitude": 1,
+      "Warlord: Blood Rage": 1,
+      "Warlord: Expert Blow": 2,
+      "Warlord: Bloodlust": 2,
+      "Warlord: Reinforce": 3,
+      // magus
+      "Magus: Word of Pain": 1,
+      "Magus: Unholy Ritual": 1,
+      "Magus: Rise Again": 2,
+      "Magus: Word of Despair": 2,
+      "Magus: Diabolic Power": 3,
+      // enchanter
+      "Enchanter: Elixir of Stone": 1,
+      "Enchanter: Dragonbone Pendant": 1,
+      "Enchanter: Rings of Zhol'alam": 1,
+      "Enchanter: Wristlet of Wind": 1,
+      "Enchanter: Rune of the Phoenix": 2,
+      "Enchanter: Ward of Peace": 2,
+      "Enchanter: Sign of Last Zenith": 3,
+      // shadowmancer
+      "Shadowmancer: Imploding Rift": 1,
+      "Shadowmancer: Shadow of Doubt": 1,
+      "Shadowmancer: Out of Darkness": 1,
+      "Shadowmancer: Mistrust": 1,
+      "Shadowmancer: Shadow Walk": 2,
+      "Shadowmancer: Black Out": 2,
+      "Shadowmancer: Treacherous Shadows": 3
     }
   },
   "campaigns": {
