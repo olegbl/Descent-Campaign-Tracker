@@ -164,8 +164,21 @@ button:disabled {
   font-style: italic;
 }
 
+.loading .logo {
+  text-align: center;
+}
+
 .login {
   padding: 10px;
+}
+
+.login .logo {
+  text-align: center;
+}
+
+.login .description {
+  padding: 20px;
+  font-size: 16px;
 }
 
 .login button {

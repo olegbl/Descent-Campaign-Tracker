@@ -36,14 +36,7 @@ var UIRoot = React.createClass({
 
   render: function() {
     return <div>
-      {this.renderHeader()}
       {this.renderContent()}
-    </div>
-  },
-
-  renderHeader: function() {
-    return <div className="header">
-      Descent Campaign Tracker
     </div>
   },
 
